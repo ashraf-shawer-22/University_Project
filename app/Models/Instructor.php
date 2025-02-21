@@ -11,7 +11,7 @@ class Instructor extends Model
 
     protected $primaryKey = 'instructor_id';
 
-    protected $fillable = ['full_name', 'department_id', 'course_id'];
+    protected $fillable = ['full_name', 'age', 'salary', 'department_id', 'course_id'];
 
     public function department()
     {

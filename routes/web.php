@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\InstructorController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginController;
@@ -27,6 +28,11 @@ Route::get('/overview', function () {
     return view('home',compact('students','courses', 'instructors'));
 })->name('overview');
 
+Route::get('/overview/instructor', [InstructorController::class, 'index'])->name('instructor');
+Route::get('/overview/instructor/is', [InstructorController::class, 'isIndex'])->name('instructor.is');
+Route::get('/overview/instructor/cs', [InstructorController::class, 'csIndex'])->name('instructor.cs');
+Route::get('/overview/instructor/ai', [InstructorController::class, 'aiIndex'])->name('instructor.ai');
+Route::get('/overview/instructor/bio', [InstructorController::class, 'bioIndex'])->name('instructor.bio');
 
 
 

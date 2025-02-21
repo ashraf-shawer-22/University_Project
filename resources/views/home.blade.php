@@ -37,7 +37,7 @@
     <div class="content">
         <div class="aside">
                 <div class="sidebar">
-                    <a href="#" class="active">
+                    <a href="{{ route('overview') }}" class="active">
                         <i class="fas fa-th-large"></i>
                         <h3>overview</h3>
                     </a>
@@ -53,7 +53,7 @@
                         <i class="fas fa-user-graduate"></i>
                         <h3>Students</h3>
                     </a>
-                    <a href="#">
+                    <a href="{{ route('instructor') }}">
                         <i class="fas fa-chalkboard-teacher"></i>
                         <h3>instructor</h3>
                     </a>

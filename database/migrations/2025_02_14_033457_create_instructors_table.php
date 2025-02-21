@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('instructors', function (Blueprint $table) {
             $table->bigIncrements('instructor_id');
             $table->string('full_name');
+            $table->unsignedInteger('age');
+            $table->decimal('salary', 10, 2);
             $table->unsignedBigInteger('department_id');
             $table->unsignedBigInteger('course_id');
             $table->timestamps();
