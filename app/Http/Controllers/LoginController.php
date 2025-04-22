@@ -14,10 +14,10 @@ class LoginController extends Controller
     /**
      * Show the login form.
      */
-    // public function showLoginForm()
-    // {
-    //     return view('login');
-    // }
+    public function showLoginForm()
+    {
+        return view('login');
+    }
 
     /**
      * Handle login request.
@@ -33,7 +33,8 @@ class LoginController extends Controller
         // Attempt to authenticate
         if (Auth::attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
-            return redirect()->route('overview');
+            $user = Auth::user();
+            return redirect()->route('overview',['password'=> $user->passsword] );
 
         }
 

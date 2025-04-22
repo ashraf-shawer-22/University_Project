@@ -9,12 +9,10 @@ class FinancialReport extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'report_id';
-
-    protected $fillable = ['event_id', 'revenue', 'expenses', 'total_budget', 'report_date'];
+    protected $fillable = ['report_date', 'total_budget', 'expenses', 'revenue', 'event_id'];
 
     public function event()
     {
-        return $this->belongsTo(Event::class, 'event_id');
+        return $this->belongsTo(Event::class);
     }
 }

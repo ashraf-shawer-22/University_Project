@@ -13,14 +13,14 @@ class DepartmentController extends Controller
 {
     $departments = Department::all();
 
-    $CS =Department::where('department_name', 'Computer Science')->first();
-    $IS =Department::where('department_name', 'information System')->first();;
-    $AI =Department::where('department_name', 'artificial intelligence')->first();;
-    $BI =Department::where('department_name', 'bioinformatic')->first();
-    $cs_student_count = $CS ? Student::where('department_id', $CS->department_id)->count() : 0;
-    $is_student_count = $IS ? Student::where('department_id', $IS->department_id)->count() : 0;
-    $ai_student_count = $AI ? Student::where('department_id', $AI->department_id)->count() : 0;
-    $bi_student_count = $BI ? Student::where('department_id', $BI->department_id)->count() : 0;
+    $CS =Department::where('department_name', 'CS')->first();
+    $IS =Department::where('department_name', 'IS')->first();;
+    $AI =Department::where('department_name', 'AI')->first();;
+    $BI =Department::where('department_name', 'BIO')->first();
+    $cs_student_count = $CS ? Student::where('department_id', $CS->id)->count() : 0;
+    $is_student_count = $IS ? Student::where('department_id', $IS->id)->count() : 0;
+    $ai_student_count = $AI ? Student::where('department_id', $AI->id)->count() : 0;
+    $bi_student_count = $BI ? Student::where('department_id', $BI->id)->count() : 0;
     if($IS)
         $IS=$IS->head_of_department;
     else

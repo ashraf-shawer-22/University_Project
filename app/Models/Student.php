@@ -4,28 +4,27 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
     use HasFactory;
+    // use SoftDeletes;
 
-    protected $primaryKey = 'student_id';
-
-    protected $fillable = ['enroll_year', 'gpa', 'department_id', 'course_id'];
+    protected $fillable = ['name', 'gender', 'year', 'department_id', 'gpa', 'attendance', 'absence', 'address', 'phone'];
 
     public function department()
     {
-        return $this->belongsTo(Department::class, 'department_id');
+        return $this->belongsTo(Department::class);
     }
 
-    public function course()
+    public function attendanceRecords()
     {
-        return $this->belongsTo(Course::class, 'course_id');
+        return $this->hasMany(Attendance::class);
     }
 
-    public function attendances()
+    public function attendance()
     {
         return $this->hasMany(Attendance::class, 'student_id');
     }
 }
-

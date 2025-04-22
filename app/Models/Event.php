@@ -9,13 +9,10 @@ class Event extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'event_id';
+    protected $fillable = ['event_name', 'event_date'];
 
-    protected $fillable = ['event_name', 'event_date', 'event_location'];
-
-    public function financialReport()
+    public function financialReports()
     {
-        return $this->hasOne(FinancialReport::class, 'event_id');
+        return $this->hasMany(FinancialReport::class);
     }
 }
-

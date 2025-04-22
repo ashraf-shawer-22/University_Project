@@ -15,7 +15,7 @@ class InstructorController extends Controller
 
     public function isIndex()
     {
-        $department = Department::where('department_name', 'Information System')->first();
+        $department = Department::where('department_name', 'IS')->first();
 
     // If the department exists
     if ($department) {
@@ -24,7 +24,7 @@ class InstructorController extends Controller
 
         // Get all instructors for this department
         $instructors = Instructor::with('course')
-            ->where('department_id', $department->department_id)
+            ->where('department_id', $department->id)
             ->get();
 
         // Pass the head of department and instructors to the view
@@ -37,7 +37,7 @@ class InstructorController extends Controller
 
     public function csIndex()
     {
-        $department = Department::where('department_name', 'Computer Science')->first();
+        $department = Department::where('department_name', 'CS')->first();
 
     // Check if the department exists
     if ($department) {
@@ -46,7 +46,7 @@ class InstructorController extends Controller
 
         // Get all instructors for this department
         $instructors = Instructor::with('course')
-            ->where('department_id', $department->department_id)
+            ->where('department_id', $department->id)
             ->get();
 
         // Pass the head of department and instructors to the view
@@ -58,7 +58,7 @@ class InstructorController extends Controller
 
     public function aiIndex()
     {
-        $department = Department::where('department_name', 'Artificial Intelligence')->first();
+        $department = Department::where('department_name', 'AI')->first();
 
     // Check if the department exists
     if ($department) {
@@ -67,7 +67,7 @@ class InstructorController extends Controller
 
         // Get all instructors for this department
         $instructors = Instructor::with('course')
-            ->where('department_id', $department->department_id)
+            ->where('department_id', $department->id)
             ->get();
 
         // Pass the head of department and instructors to the view
@@ -79,7 +79,7 @@ class InstructorController extends Controller
 
     public function bioIndex()
     {
-        $department = Department::where('department_name', 'Bioinformatics')->first();
+        $department = Department::where('department_name', 'BIO')->first();
 
     // Check if the department exists
     if ($department) {
@@ -88,11 +88,11 @@ class InstructorController extends Controller
 
         // Get all instructors for this department
         $instructors = Instructor::with('course')
-            ->where('department_id', $department->department_id)
+            ->where('department_id', $department->id)
             ->get();
 
         // Pass the head of department and instructors to the view
-        return view('ai_instructor', compact('headOfDepartment', 'instructors'));
+        return view('bio_instructor', compact('headOfDepartment', 'instructors'));
     }
 
     return redirect()->back()->with('error', 'Department not found');

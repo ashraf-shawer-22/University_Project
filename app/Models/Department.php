@@ -9,23 +9,20 @@ class Department extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'department_id';
-
-    protected $fillable = ['department_name', 'head_of_department'];
+    protected $fillable = ['department_name', 'head_of_department', 'no_of_students', 'no_of_instructors'];
 
     public function students()
     {
-        return $this->hasMany(Student::class, 'department_id');
-    }
-
-    public function courses()
-    {
-        return $this->hasMany(Course::class, 'department_id');
+        return $this->hasMany(Student::class);
     }
 
     public function instructors()
     {
-        return $this->hasMany(Instructor::class, 'department_id');
+        return $this->hasMany(Instructor::class);
+    }
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
     }
 }
-

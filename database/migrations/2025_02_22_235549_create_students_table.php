@@ -12,18 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->bigIncrements('student_id'); // Auto-incrementing primary key
-            $table->string('enroll_year');
-            $table->decimal('gpa', 3, 2);
-            $table->decimal('attendance_rate', 5, 2); // Added attendance_rate (percentage with 2 decimals)
+            $table->id();
+            $table->string('name');
+            $table->enum('gender', ['Male', 'Female']);
+            $table->integer('year');
             $table->unsignedBigInteger('department_id');
-            $table->unsignedBigInteger('course_id');
+            $table->decimal('gpa', 3, 2);
+            $table->integer('attendance')->default(0);
+            $table->integer('absence')->default(0);
+            $table->text('address');
+            $table->string('phone')->unique();
             $table->timestamps();
 
-            $table->foreign('department_id')->references('department_id')->on('departments')->onDelete('cascade');
-            $table->foreign('course_id')->references('course_id')->on('courses')->onDelete('cascade');
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
         });
-
     }
 
     /**

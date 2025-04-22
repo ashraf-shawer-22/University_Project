@@ -12,15 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('financial_reports', function (Blueprint $table) {
-            $table->bigIncrements('report_id');
-            $table->unsignedBigInteger('event_id');
-            $table->decimal('revenue', 10, 2);
-            $table->decimal('expenses', 10, 2);
-            $table->decimal('total_budget', 10, 2);
+            $table->id();
             $table->date('report_date');
+            $table->decimal('total_budget', 10, 2);
+            $table->decimal('expenses', 10, 2);
+            $table->decimal('revenue', 10, 2);
+            $table->unsignedBigInteger('event_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('event_id')->references('event_id')->on('events');
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('set null');
         });
     }
 
