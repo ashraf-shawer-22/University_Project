@@ -10,7 +10,7 @@ integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1c
 crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ url('/css/all_min.css')}}">
     <link rel="stylesheet" href="{{ url('/css/normalize.css')}}">
-    <link rel="stylesheet" href="{{ url('/css/L2_attendence.css')}}">
+    <link rel="stylesheet" href="{{ url('/css/L1_attendence.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>L1-Attendence Page</title>
 

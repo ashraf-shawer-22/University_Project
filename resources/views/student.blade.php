@@ -9,7 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ url('/css/all_min.css')}}">
     <link rel="stylesheet" href="{{ url('/css/normalize.css')}}">
-    <link rel="stylesheet" href="{{ url('/css/attendence.css')}}">
+    <link rel="stylesheet" href="{{ url('/css/student.css')}}">
     <title>Attendence Page</title>
 
 </head>
@@ -77,37 +77,31 @@
         </div>
         <div class="holder">
             <div class="header">
-                <h1>Attendence</h1>
+                <h1>student</h1>
                 <button class="b" onclick="history.back()">Back</button>
             </div>
             <div class="card-container">
-                <div class="tesst" style="display: flex; justify-content: space-between; margin: 50px 0 100px 0; ">
-
                 <div class="card">
                     <a href="{{ route('student.lev1_student') }}">
                         <h2>Level-1</h2>
                     </a>
                 </div>
-                <div class="card" style="margin-left: 200px; ">
+                <div class="card">
                     <a href="{{ route('student.lev2_student') }}">
                         <h2>Level-2</h2>
                     </a>
                 </div>
-                </div>
-                <div style="display: flex; ">
                 <div class="card">
                     <a href="{{ route('student.lev3_student') }}">
                         <h2>Level-3</h2>
                     </a>
-
                 </div>
-                <div class="card" style="margin-left: 200px; ">
+                <div class="card">
                     <a href="{{ route('student.lev4_student') }}">
                         <h2>Level-4</h2>
                     </a>
-
                 </div>
-                </div>
+                
             </div>
         </div>
     </div>

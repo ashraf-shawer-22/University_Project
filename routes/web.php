@@ -128,7 +128,13 @@ Route::post('/reset-password', [ForgotPasswordController::class, 'resetPassword'
 
 
 
-
+Route::get('/test', function () {
+    $user = new User();
+    $user->name = 'Abdelfattah Mohammed';
+    $user->email = 'arg24680@gmail.com';
+    $user->password = bcrypt('12345678');
+    $user->save();
+});
 
 // Route::get('/test', function () {
 //     $user = new User();

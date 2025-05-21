@@ -81,31 +81,25 @@
                 <button class="b" onclick="history.back()">Back</button>
             </div>
             <div class="card-container" >
-                <div style="display: flex; justify-content: space-between; margin: 50px 0 100px 0; ">
-                    <div class="card">
-                        <a href="{{ route('attendance.l1') }}">
-                            <h2>Level-1</h2>
-                        </a>
-                    </div>
-                    <div class="card" style="margin-left: 200px; ">
-                        <a href="{{ route('attendance.l2') }}">
-                            <h2>Level-2</h2>
-                        </a>
-                    </div>
+                <div class="card">
+                    <a href="{{ route('attendance.l1') }}">
+                        <h2>Level-1</h2>
+                    </a>
                 </div>
-                <div style="display: flex;">
-                    <div class="card">
-                        <a href="{{ route('attendance.l3') }}">
-                            <h2>Level-3</h2>
-                        </a>
-
-                    </div>
-                    <div class="card" style="margin-left: 200px; ">
-                        <a href="{{ route('attendance.l4') }}">
-                            <h2>Level-4</h2>
-                        </a>
-
-                    </div>
+                <div class="card" >
+                    <a href="{{ route('attendance.l2') }}">
+                        <h2>Level-2</h2>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="{{ route('attendance.l3') }}">
+                        <h2>Level-3</h2>
+                    </a>
+                </div>
+                <div class="card" >
+                    <a href="{{ route('attendance.l4') }}">
+                        <h2>Level-4</h2>
+                    </a>
                 </div>
             </div>
         </div>
