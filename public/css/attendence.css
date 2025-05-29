@@ -190,11 +190,18 @@ a {
 .card:hover {
     transform: scale(1, 1.1) translateX(-10px);
     cursor: pointer;
+    background-color: var(--maincolor);
+    color: white;
+}
+
+.card:hover h2 {
+    color: white;
 }
 
 .card h2 {
     font-size: 30px;
     color: var(--maincolor);
+    transition: var(--main-transition-dur)
 }
 
 .card .highlight {

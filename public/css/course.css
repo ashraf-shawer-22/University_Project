@@ -189,6 +189,7 @@ a {
     color: white;
     text-align: center;
     font-weight: bold;
+    padding-top: 5px;
 }
 .container .levels-ul .li-levels ul{
     border-top: 1px solid black;
@@ -196,8 +197,20 @@ a {
     font-weight: normal;
 }
 .container .levels-ul .li-levels ul li{
-    
     padding: 10px;
+    transition: var(--main-transition-dur);
+}
+.container .levels-ul .li-levels ul li a{
+    transition: var(--main-transition-dur);
+}
+.container .levels-ul .li-levels ul li:hover{
+    background-color: var(--maincolor)
+}
+.container .levels-ul .li-levels ul li:hover a{
+    color: white;
+    font-weight: bold;
+    transform: scale(1.01);
+    
 }
 .container .levels-ul .li-levels ul li:last-child{
     border-top: 1px solid black;
